@@ -45,7 +45,7 @@ resource "aws_security_group" "instance" {
     from_port   = var.proxy_port
     to_port     = var.proxy_port
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["${var.ip_address}/32"]
   }
 
   egress {
